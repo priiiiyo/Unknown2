@@ -11,10 +11,12 @@ RUN set -ex \
         libc-ares-dev libcrypto++-dev libcurl4-openssl-dev \
         libmagic-dev libsodium-dev libsqlite3-dev libssl-dev \
         # priiiiyo-mirror-bot dependencies
-        aria2 curl ffmpeg jq p7zip-full p7zip-rar pv \
+        aria2 curl ffmpeg jq p7zip-full mediainfo p7zip-rar pv \
     && sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen \
     && locale-gen \
     # Setup priiiiyo-mirror-bot dependencies
+    && curl -fsSL https://github.com/P3TERX/aria2.conf/raw/master/dht.dat -O /usr/src/app/dht.dat && \
+    && curl -fsSL https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat -O /usr/src/app/dht6.dat \
     && curl -fsSL https://github.com/jaskaranSM/megasdkrest/releases/download/v0.1/megasdkrest -o /usr/local/bin/megasdkrest \
     && chmod +x /usr/local/bin/megasdkrest \
     && curl -fsSLO https://raw.githubusercontent.com/priiiiyo/priiiiyo-mirror-bot/master/requirements.txt \

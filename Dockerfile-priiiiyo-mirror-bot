@@ -10,11 +10,11 @@ RUN set -ex \
         # MegaSDK-REST dependencies
         libc-ares-dev libcrypto++-dev libcurl4-openssl-dev \
         libmagic-dev libsodium-dev libsqlite3-dev libssl-dev \
-        # priiiyo-mirror-bot dependencies
+        # priiiiyo-mirror-bot dependencies
         aria2 curl ffmpeg jq p7zip-full mediainfo p7zip-rar pv \
     && sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen \
     && locale-gen \
-    # Setup priiiyo-mirror-bot dependencies
+    # Setup priiiiyo-mirror-bot dependencies
     && curl -fsSL https://github.com/jaskaranSM/megasdkrest/releases/download/v0.1/megasdkrest -o /usr/local/bin/megasdkrest \
     && chmod +x /usr/local/bin/megasdkrest \
     && curl -fsSLO https://raw.githubusercontent.com/priiiiyo/priiiiyo-mirror-bot/master/requirements.txt \

@@ -1,9 +1,9 @@
-name: priiiyo-mirror-bot Docker builder
+name: priiiiyo-mirror-bot Docker builder
 
 on:
   push:
     paths:
-      - "Dockerfile-priiiyo-mirror-bot"
+      - "Dockerfile-priiiiyo-mirror-bot"
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
@@ -24,10 +24,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile-priiiyo-mirror-bot
+          file: ./Dockerfile-priiiiyo-mirror-bot
           platforms: linux/amd64
           push: true
-          tags: priiiyo/priiiyo-mirror-bot:ubuntu
+          tags: priiiiyo/priiiiyo-mirror-bot:ubuntu
 
       - name: Alert via Telegram
         run: |
@@ -35,4 +35,4 @@ jobs:
               curl -s "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendmessage" \
               --data "text=${*}&chat_id=${{ secrets.TELEGRAM_TO }}&parse_mode=Markdown&disable_notification=True"
           }
-          sendTG "*priiiyo-mirror-bot docker container has been updated:* [Link](https://hub.docker.com/r/priiiyo/priiiyo-mirror-bot/tags)" &> /dev/null
+          sendTG "*priiiiyo-mirror-bot docker container has been updated:* [Link](https://hub.docker.com/r/priiiyo/priiiiyo-mirror-bot/tags)" &> /dev/null

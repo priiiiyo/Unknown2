@@ -19,7 +19,7 @@ RUN set -ex \
     && curl -fsSL https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat -O /usr/src/app/dht6.dat \
     && curl -fsSL https://github.com/jaskaranSM/megasdkrest/releases/download/v0.1/megasdkrest -o /usr/local/bin/megasdkrest \
     && chmod +x /usr/local/bin/megasdkrest \
-    && curl -fsSLO https://raw.githubusercontent.com/priiiiyo/priiiiyo-mirror-bot/master/requirements.txt \
+    && curl -fsSLO https://raw.githubusercontent.com/KenHV/Mirror-Bot/master/requirements.txt \
     && pip3 install --no-cache-dir -r requirements.txt \
     && rm requirements.txt \
     # Cleanup environment

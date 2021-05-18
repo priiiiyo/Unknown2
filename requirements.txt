@@ -1,6 +1,5 @@
 requests
 appdirs
-
 progress
 psutil
 bs4

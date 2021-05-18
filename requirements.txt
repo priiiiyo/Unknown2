@@ -1,5 +1,6 @@
 requests
 psutil
+asyncio
 bs4
 Pillow>=4.2.0
 python-telegram-bot==12.6.1 

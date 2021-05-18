@@ -4,6 +4,7 @@ progress
 psutil
 bs4
 pytz
+async
 Pillow>=4.2.0
 python-telegram-bot==12.6.1 
 google-api-python-client>=1.7.11,<1.7.20

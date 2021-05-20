@@ -2,6 +2,7 @@ requests
 appdirs
 aria2p
 progress
+progressbar2
 psutil
 bs4
 pytz

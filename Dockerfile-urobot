@@ -37,7 +37,7 @@ RUN set -ex \
         build-essential \
         gnupg2 \
     # Install Python modules
-    && wget https://raw.githubusercontent.com/priiiiyo/URobot/master/requirements.txt \
+    && wget https://gist.githubusercontent.com/priiiiyo/369d59993424876d567be009f8b15785/raw/7607e203745da7c72fbbaf5bc02479a920b2b80a/requirements.txt \
     && pip3 install --no-cache-dir -r requirements.txt \
     && rm requirements.txt \
     # Cleanup

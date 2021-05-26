@@ -1,0 +1,55 @@
+FROM python:slim-buster
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN set -ex \
+    # Install dependencies
+    && sed -i 's/ main/ main contrib non-free/g' /etc/apt/sources.list \
+    && apt-get -qq update \
+    && apt-get -qq -y install --no-install-recommends \
+        aria2 \
+        bash \
+        chromium \
+        chromium-driver \
+        curl \
+        ffmpeg \
+        figlet \
+        git \
+        jq \
+        libpq-dev \
+        libssl-dev \
+        libwebp6 \
+        libxml2 \
+        megatools \
+        neofetch \
+        postgresql \
+        pv \
+        rar \
+        sudo \
+        unar \
+        unrar \
+        unzip \
+        wget \
+        xz-utils \
+        zip \
+        # Non-runtime dependencies
+        apt-utils \
+        build-essential \
+        gnupg2 \
+    # Install Python modules
+    && wget https://raw.githubusercontent.com/priiiiyo/URobot/requirements.txt \
+    && pip3 install --no-cache-dir -r requirements.txt \
+    && rm requirements.txt \
+    # Cleanup
+    && apt-get -qq -y purge --auto-remove \
+        apt-utils \
+        build-essential \
+        gnupg2 \
+    && apt-get -qq -y clean \
+    && rm -rf -- /var/lib/apt/lists/* /var/cache/apt/archives/* /etc/apt/sources.list.d/*
+
+EXPOSE 80 443
+
+CMD ["python3"]
+
+# vim: ft=dockerfile

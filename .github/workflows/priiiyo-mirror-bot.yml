@@ -27,7 +27,7 @@ jobs:
           file: ./Dockerfile-priiiiyo-mirror-bot
           platforms: linux/amd64
           push: true
-          tags: priiiiyo/priiiiyo-mirror-bot:ubuntu
+          tags: priiiiyo/priiiiyo-mirror-bot:master-latest
 
       - name: Alert via Telegram
         run: |
